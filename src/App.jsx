@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./scss/main.scss";
+import Card from "./components/Card";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -34,7 +35,7 @@ export default class App extends React.Component {
       })
       .finally(() => {
         // TODO: remove finally and log
-        console.log(this.state);
+        // console.log(this.state);
       });
   }
 
@@ -99,6 +100,9 @@ export default class App extends React.Component {
             </form>
           </div>
         </div>
+        {this.state.carrierCardData.map((aCardData) => (
+          <Card aCardData={aCardData} />
+        ))}
       </div>
     );
   }
