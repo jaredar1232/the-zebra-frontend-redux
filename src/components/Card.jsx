@@ -3,6 +3,7 @@ import Stars from "./Stars";
 import Logo from "./Logo";
 import Features from "./Features";
 import Button from "./Button";
+import VerifiedMark from "./VerifiedMark";
 
 export default class Card extends React.Component {
   constructor(props) {
@@ -19,16 +20,13 @@ export default class Card extends React.Component {
     let carrier = this.props.aCardData;
     return (
       <div className="card-container">
+        <VerifiedMark isVerified={carrier.tag} />
         <Logo />
         <div>{carrier.name}</div>
 
-        {carrier.stars !== undefined && carrier.stars !== null ? (
-          <Stars stars={carrier.stars} />
-        ) : null}
+        <Stars stars={carrier.stars} />
 
-        {carrier.features !== undefined && carrier.features !== null ? (
-          <Features features={carrier.features} />
-        ) : null}
+        <Features features={carrier.features} />
 
         <div>
           {carrier.tagline !== undefined && carrier.tagline !== null
@@ -36,13 +34,9 @@ export default class Card extends React.Component {
             : null}
         </div>
 
-        {carrier.type === 2 ? (
-          <div>
-            ${Math.ceil(carrier.rate)} <span>/ mo</span>
-          </div>
-        ) : (
-          <Button data={carrier.action} type={carrier.type} />
-        )}
+        <div>{carrier.tag}</div>
+
+        <Button data={carrier.action} type={carrier.type} rate={carrier.rate} />
       </div>
     );
   }

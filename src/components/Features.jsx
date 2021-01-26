@@ -21,44 +21,51 @@ import { ReactComponent as IconFeaturesCreditCard } from "../assets/IconFeatures
 import { ReactComponent as IconFeatures247Support } from "../assets/IconFeatures247Support.svg";
 
 const Features = (props) => {
-  // Takes in a features array. Returns an array of feature components
-  const buildFeatures = (featureNamesArray) => {
-    let featuresComponentArray = [];
+  // Only returns if values exist
+  if (props.features) {
+    // Takes in a features array. Returns an array of feature components
+    const buildFeatures = (featureNamesArray) => {
+      let featuresComponentArray = [];
 
-    for (let i = 0; i < featureNamesArray.length; i++) {
-      const featuresObject = {
-        IconFeaturesBuyOnline: <IconFeaturesBuyOnline key={i} />,
-        IconFeaturesLocalAgent: <IconFeaturesLocalAgent key={i} />,
-        IconFeaturesMobile: <IconFeaturesMobile key={i} />,
-        IconFeaturesPaperless: <IconFeaturesPaperless key={i} />,
-        IconFeaturesNewCarReplacement: (
-          <IconFeaturesNewCarReplacement key={i} />
-        ),
-        IconFeaturesImmediateCoverage: (
-          <IconFeaturesImmediateCoverage key={i} />
-        ),
-        IconFeaturesAutomaticPayment: <IconFeaturesAutomaticPayment key={i} />,
-        IconFeaturesOnlineIdCards: <IconFeaturesOnlineIdCards key={i} />,
-        IconFeaturesSR22: <IconFeaturesSR22 key={i} />,
-        IconFeaturesRoadside: <IconFeaturesRoadside key={i} />,
-        IconFeaturesRideshare: <IconFeaturesRideshare key={i} />,
-        IconFeaturesRentersBundle: <IconFeaturesRentersBundle key={i} />,
-        IconFeaturesRateLock: <IconFeaturesRateLock key={i} />,
-        IconFeaturesOnlineServicing: <IconFeaturesOnlineServicing key={i} />,
-        IconFeaturesNonOwner: <IconFeaturesNonOwner key={i} />,
-        IconFeaturesNoCreditCheck: <IconFeaturesNoCreditCheck key={i} />,
-        IconFeaturesLowDownPayment: <IconFeaturesLowDownPayment key={i} />,
-        IconFeaturesDriverExclusion: <IconFeaturesDriverExclusion key={i} />,
-        IconFeaturesCreditCard: <IconFeaturesCreditCard key={i} />,
-        IconFeatures247Support: <IconFeatures247Support key={i} />,
-      };
-      let iconName = featureNamesArray[i].icon;
-      featuresComponentArray.push(featuresObject[iconName]);
-    }
-    return featuresComponentArray;
-  };
+      for (let i = 0; i < featureNamesArray.length; i++) {
+        const featuresObject = {
+          IconFeaturesBuyOnline: <IconFeaturesBuyOnline key={i} />,
+          IconFeaturesLocalAgent: <IconFeaturesLocalAgent key={i} />,
+          IconFeaturesMobile: <IconFeaturesMobile key={i} />,
+          IconFeaturesPaperless: <IconFeaturesPaperless key={i} />,
+          IconFeaturesNewCarReplacement: (
+            <IconFeaturesNewCarReplacement key={i} />
+          ),
+          IconFeaturesImmediateCoverage: (
+            <IconFeaturesImmediateCoverage key={i} />
+          ),
+          IconFeaturesAutomaticPayment: (
+            <IconFeaturesAutomaticPayment key={i} />
+          ),
+          IconFeaturesOnlineIdCards: <IconFeaturesOnlineIdCards key={i} />,
+          IconFeaturesSR22: <IconFeaturesSR22 key={i} />,
+          IconFeaturesRoadside: <IconFeaturesRoadside key={i} />,
+          IconFeaturesRideshare: <IconFeaturesRideshare key={i} />,
+          IconFeaturesRentersBundle: <IconFeaturesRentersBundle key={i} />,
+          IconFeaturesRateLock: <IconFeaturesRateLock key={i} />,
+          IconFeaturesOnlineServicing: <IconFeaturesOnlineServicing key={i} />,
+          IconFeaturesNonOwner: <IconFeaturesNonOwner key={i} />,
+          IconFeaturesNoCreditCheck: <IconFeaturesNoCreditCheck key={i} />,
+          IconFeaturesLowDownPayment: <IconFeaturesLowDownPayment key={i} />,
+          IconFeaturesDriverExclusion: <IconFeaturesDriverExclusion key={i} />,
+          IconFeaturesCreditCard: <IconFeaturesCreditCard key={i} />,
+          IconFeatures247Support: <IconFeatures247Support key={i} />,
+        };
+        let iconName = featureNamesArray[i].icon;
+        featuresComponentArray.push(featuresObject[iconName]);
+      }
+      return featuresComponentArray;
+    };
 
-  return <div> {buildFeatures(props.features)}</div>;
+    return <div> {buildFeatures(props.features)}</div>;
+  } else {
+    return null;
+  }
 };
 
 export default Features;
