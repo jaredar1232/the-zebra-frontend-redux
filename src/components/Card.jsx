@@ -12,7 +12,7 @@ export default class Card extends React.Component {
     // bind methods here
   }
   componentDidMount() {
-    // console.log(this.props.aCardData);
+    console.log(this.props.aCardData);
   }
 
   render() {
@@ -36,7 +36,13 @@ export default class Card extends React.Component {
             : null}
         </div>
 
-        <Button data={carrier.action} />
+        {carrier.type === 2 ? (
+          <div>
+            ${Math.ceil(carrier.rate)} <span>/ mo</span>
+          </div>
+        ) : (
+          <Button data={carrier.action} type={carrier.type} />
+        )}
       </div>
     );
   }
