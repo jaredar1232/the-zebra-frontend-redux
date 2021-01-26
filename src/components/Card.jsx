@@ -11,7 +11,7 @@ export default class Card extends React.Component {
     // bind methods here
   }
   componentDidMount() {
-    console.log(this.props.aCardData);
+    // console.log(this.props.aCardData);
   }
 
   render() {

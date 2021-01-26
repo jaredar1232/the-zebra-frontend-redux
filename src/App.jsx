@@ -32,10 +32,6 @@ export default class App extends React.Component {
       })
       .catch((err) => {
         console.error(err);
-      })
-      .finally(() => {
-        // TODO: remove finally and log
-        // console.log(this.state);
       });
   }
 
@@ -101,7 +97,7 @@ export default class App extends React.Component {
           </div>
         </div>
         {this.state.carrierCardData.map((aCardData) => (
-          <Card aCardData={aCardData} />
+          <Card aCardData={aCardData} key={aCardData.name} />
         ))}
       </div>
     );

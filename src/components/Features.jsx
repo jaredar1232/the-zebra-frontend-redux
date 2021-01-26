@@ -37,7 +37,8 @@ const Features = (props) => {
       //   console.log(featureNamesArray[i].icon);
       let iconName = featureNamesArray[i].icon;
 
-      //   featuresArray.push(JSON.parse(`<${iconName} />`));
+      //   let element = `<${iconName} />`;
+      // featuresArray.push(JSON.parse(`<${iconName} />`));/
 
       //   let pushable =
       //     iconName === "IconFeaturesBuyOnline" ? (
@@ -85,80 +86,80 @@ const Features = (props) => {
       //   featuresArray.push(pushable);
 
       if (iconName === "IconFeaturesBuyOnline") {
-        featuresArray.push(<IconFeaturesBuyOnline />);
+        featuresArray.push(<IconFeaturesBuyOnline key={i} />);
       }
       if (featureNamesArray[i].icon === "IconFeaturesLocalAgent") {
-        featuresArray.push(<IconFeaturesLocalAgent />);
+        featuresArray.push(<IconFeaturesLocalAgent key={i} />);
       }
       if (featureNamesArray[i].icon === "IconFeaturesMobile") {
-        featuresArray.push(<IconFeaturesMobile />);
+        featuresArray.push(<IconFeaturesMobile key={i} />);
       }
       if (featureNamesArray[i].icon === "IconFeaturesPaperless") {
-        featuresArray.push(<IconFeaturesPaperless />);
+        featuresArray.push(<IconFeaturesPaperless key={i} />);
       }
 
       if (featureNamesArray[i].icon === "IconFeaturesNewCarReplacement") {
-        featuresArray.push(<IconFeaturesNewCarReplacement />);
+        featuresArray.push(<IconFeaturesNewCarReplacement key={i} />);
       }
 
       if (featureNamesArray[i].icon === "IconFeaturesImmediateCoverage") {
-        featuresArray.push(<IconFeaturesImmediateCoverage />);
+        featuresArray.push(<IconFeaturesImmediateCoverage key={i} />);
       }
 
       if (featureNamesArray[i].icon === "IconFeaturesAutomaticPayment") {
-        featuresArray.push(<IconFeaturesAutomaticPayment />);
+        featuresArray.push(<IconFeaturesAutomaticPayment key={i} />);
       }
 
       if (featureNamesArray[i].icon === "IconFeaturesOnlineIdCards") {
-        featuresArray.push(<IconFeaturesOnlineIdCards />);
+        featuresArray.push(<IconFeaturesOnlineIdCards key={i} />);
       }
 
       if (featureNamesArray[i].icon === "IconFeaturesSR22") {
-        featuresArray.push(<IconFeaturesSR22 />);
+        featuresArray.push(<IconFeaturesSR22 key={i} />);
       }
 
       if (featureNamesArray[i].icon === "IconFeaturesRoadside") {
-        featuresArray.push(<IconFeaturesRoadside />);
+        featuresArray.push(<IconFeaturesRoadside key={i} />);
       }
 
       if (featureNamesArray[i].icon === "IconFeaturesRideshare") {
-        featuresArray.push(<IconFeaturesRideshare />);
+        featuresArray.push(<IconFeaturesRideshare key={i} />);
       }
 
       if (featureNamesArray[i].icon === "IconFeaturesRentersBundle") {
-        featuresArray.push(<IconFeaturesRentersBundle />);
+        featuresArray.push(<IconFeaturesRentersBundle key={i} />);
       }
 
       if (featureNamesArray[i].icon === "IconFeaturesRateLock") {
-        featuresArray.push(<IconFeaturesRateLock />);
+        featuresArray.push(<IconFeaturesRateLock key={i} />);
       }
 
       if (featureNamesArray[i].icon === "IconFeaturesOnlineServicing") {
-        featuresArray.push(<IconFeaturesOnlineServicing />);
+        featuresArray.push(<IconFeaturesOnlineServicing key={i} />);
       }
 
       if (featureNamesArray[i].icon === "IconFeaturesNonOwner") {
-        featuresArray.push(<IconFeaturesNonOwner />);
+        featuresArray.push(<IconFeaturesNonOwner key={i} />);
       }
 
       if (featureNamesArray[i].icon === "IconFeaturesNoCreditCheck") {
-        featuresArray.push(<IconFeaturesNoCreditCheck />);
+        featuresArray.push(<IconFeaturesNoCreditCheck key={i} />);
       }
 
       if (featureNamesArray[i].icon === "IconFeaturesLowDownPayment") {
-        featuresArray.push(<IconFeaturesLowDownPayment />);
+        featuresArray.push(<IconFeaturesLowDownPayment key={i} />);
       }
 
       if (featureNamesArray[i].icon === "IconFeaturesDriverExclusion") {
-        featuresArray.push(<IconFeaturesDriverExclusion />);
+        featuresArray.push(<IconFeaturesDriverExclusion key={i} />);
       }
 
       if (featureNamesArray[i].icon === "IconFeaturesCreditCard") {
-        featuresArray.push(<IconFeaturesCreditCard />);
+        featuresArray.push(<IconFeaturesCreditCard key={i} />);
       }
 
       if (featureNamesArray[i].icon === "IconFeatures247Support") {
-        featuresArray.push(<IconFeatures247Support />);
+        featuresArray.push(<IconFeatures247Support key={i} />);
       }
     }
     return featuresArray;
