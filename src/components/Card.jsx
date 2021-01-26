@@ -2,6 +2,7 @@ import React from "react";
 import Stars from "./Stars";
 import Logo from "./Logo";
 import Features from "./Features";
+import Button from "./Button";
 
 export default class Card extends React.Component {
   constructor(props) {
@@ -34,6 +35,8 @@ export default class Card extends React.Component {
             ? carrier.tagline
             : null}
         </div>
+
+        <Button data={carrier.action} />
       </div>
     );
   }

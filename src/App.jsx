@@ -13,14 +13,12 @@ export default class App extends React.Component {
       searchTime: 0,
       formValue: "best",
     };
-    this.getData = this.getData.bind(this);
-    this.toMinutes = this.toMinutes.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.sortData = this.sortData.bind(this);
+
+    // Binds implicit with ES6 arrow functions
   }
 
   // Get all data via mock query and store in state
-  getData() {
+  getData = () => {
     axios
       .get("http://localhost:3001/carrier")
       .then((response) => {
@@ -33,10 +31,10 @@ export default class App extends React.Component {
       .catch((err) => {
         console.error(err);
       });
-  }
+  };
 
   // Takes in milliseconds. Returns time and proper english as a string
-  toMinutes(milliseconds) {
+  toMinutes = (milliseconds) => {
     let minutes = Math.ceil(milliseconds / 60000);
 
     if (minutes >= 2) {
@@ -47,21 +45,21 @@ export default class App extends React.Component {
       // Handles "impossible" case of an instant return (see Math.ceil above, Math.floor doesn't match mockup)
       return `less than 1 minute`;
     }
-  }
+  };
 
   // Takes in sort keyword and data. Returns sorted array of data
-  sortData(keyword, dataArray) {
+  sortData = (keyword, dataArray) => {
     // TODO: IMPLEMENT SORTING ALGORITHMS.
     // console.log("keyword", keyword);
     // console.log("dataArray", dataArray);
     // for(let i=0; i < )
-  }
+  };
 
   // Takes in a form change event. Sets formValue and carrierCardData state
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({ formValue: event.target.value });
     this.sortData(event.target.value, this.state.carrierCardData);
-  }
+  };
 
   componentDidMount() {
     this.getData();
