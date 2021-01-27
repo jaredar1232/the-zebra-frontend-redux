@@ -10,6 +10,10 @@ This project is designed to run on localhost.
 If there is an issue, try deleting your package-lock.json and node_modules, running "npm install" again, and starting the two scripts in order.
 Note that the mock server runs on port 3001 and the app runs on port 3000
 
+Testing:
+
+5. The mock server and app do not need to be running to run the tests, it is however fine if they are. Simply run "npm test" in a terminal and then press "a" to run full test suit.
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -29,4 +33,5 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `npm run server`
 
-This starts up the mock server using json-server. It is pulling data from "db.json" and sends appropriate data depending on the endpoint reached. For this application there is only one endpoint. Note that this process runs on port 3001, is needed for the application to function properly, and should be started before running "npm start".
+This starts up the mock server using json-server. It is pulling data from "db.json" and sends appropriate data depending on the endpoint reached.
+For this application there is only one endpoint. Note that this process runs on port 3001, is needed for the application to function properly, and should be started before running "npm start".
