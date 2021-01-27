@@ -6,15 +6,12 @@ import Card from "./components/Card";
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       carrierCardData: [],
       carriersSearched: 0,
       searchTime: 0,
       formValue: "best",
     };
-
-    // Binds implicit with ES6 arrow functions
   }
 
   // Get all data via mock query and store in state
@@ -47,12 +44,11 @@ export default class App extends React.Component {
     }
   };
 
-  // Takes in sort keyword and data. Returns sorted array of data
+  // Takes in sort keyword and data array. Returns sorted data array
   sortData = (keyword, dataArray) => {
     // TODO: IMPLEMENT SORTING ALGORITHMS.
     // console.log("keyword", keyword);
     // console.log("dataArray", dataArray);
-    // for(let i=0; i < )
   };
 
   // Takes in a form change event. Sets formValue and carrierCardData state
