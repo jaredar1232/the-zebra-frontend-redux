@@ -30,11 +30,7 @@ const Button = (props) => {
       </a>
     );
   } else if (props.type === 2) {
-    return (
-      <div>
-        ${Math.ceil(props.rate)} <span>/ mo</span>
-      </div>
-    );
+    return null;
   }
 };
 

@@ -6,6 +6,7 @@ import Button from "./Button";
 import VerifiedMark from "./VerifiedMark";
 import FeaturesListDropdown from "./FeaturesListDropdown";
 import DetailsDropdown from "./DetailsDropdown";
+import Price from "./Price";
 import { ReactComponent as Chevron } from "../assets/IconChevronDown.svg";
 
 export default class Card extends React.Component {
@@ -31,10 +32,7 @@ export default class Card extends React.Component {
     let carrier = this.props.aCardData;
 
     return (
-      <div
-        className="card-container"
-        onClick={() => this.handleAccordianClick()}
-      >
+      <div className="card" onClick={() => this.handleAccordianClick()}>
         <VerifiedMark isVerified={carrier.tag} />
 
         <Logo />
@@ -49,7 +47,13 @@ export default class Card extends React.Component {
 
         <div>{carrier.tag}</div>
 
-        <Button data={carrier.action} type={carrier.type} rate={carrier.rate} />
+        <Price
+          rate={carrier.rate}
+          type={carrier.type}
+          isExpanded={this.state.isExpanded}
+        />
+
+        <Button data={carrier.action} type={carrier.type} />
 
         <div
           className={

@@ -68,35 +68,37 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div>
-          <div>
-            You just compared
-            <b>{` ${this.state.carriersSearched} rates`}</b>
-            {` in ${this.toMinutes(this.state.searchTime)}!`}
+        <div className="nav-container">
+          <div className="query-info">
+            <div className="query-info-content">
+              You just compared
+              <b className="query-info-bold">{` ${this.state.carriersSearched} rates`}</b>
+              {` in ${this.toMinutes(this.state.searchTime)}!`}
+            </div>
           </div>
 
-          <div>
-            <form>
-              <label>
-                Sort by:
-                <select
-                  className=""
-                  value={this.state.formValue}
-                  onChange={this.handleChange}
-                >
-                  <option value="highest">Price: Highest First</option>
-                  <option value="lowest">Price: Lowest First</option>
-                  <option value="best">Rating: Highest First</option>
-                  <option value="worst">Rating: Lowest First</option>
-                  <option value="alphabetical">{`Alphabetical (A-Z)`}</option>
-                </select>
-              </label>
-            </form>
-          </div>
+          <form className="form">
+            <label>
+              Sort by:
+              <select
+                className="form-selector"
+                value={this.state.formValue}
+                onChange={this.handleChange}
+              >
+                <option value="highest">Price: Highest First</option>
+                <option value="lowest">Price: Lowest First</option>
+                <option value="best">Rating: Highest First</option>
+                <option value="worst">Rating: Lowest First</option>
+                <option value="alphabetical">{`Alphabetical (A-Z)`}</option>
+              </select>
+            </label>
+          </form>
         </div>
-        {this.state.carrierCardData.map((aCardData) => (
-          <Card aCardData={aCardData} key={aCardData.name} />
-        ))}
+        <div className="card-container">
+          {this.state.carrierCardData.map((aCardData) => (
+            <Card aCardData={aCardData} key={aCardData.name} />
+          ))}
+        </div>
       </div>
     );
   }
