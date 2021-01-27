@@ -35,6 +35,22 @@ $grey-text: #959595;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
 }
 
+// //////// Generic Elements //////// //
+h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: rgb(65, 65, 65);
+}
+
+p {
+  font-size: 1rem;
+  color: $grey-text;
+}
+
 // //////// Nav //////// //
 %nav-shared {
   font-size: 1.5rem;
@@ -107,13 +123,45 @@ $grey-text: #959595;
   padding: 1.5rem 3rem;
   margin: 0rem 0.5rem 1rem 0.5rem;
   position: relative;
+
+  .card-topfold-container {
+    display: grid;
+    grid-template-columns: 10% 60% 30%;
+
+    .card-topfold-subcontainer-2 {
+      padding-left: 2rem;
+      text-align: left;
+      display: grid;
+      grid-template-areas:
+        "cname cname"
+        "rating features"
+        "tag tag";
+      grid-template-columns: 20% auto;
+      grid-template-rows: auto auto auto;
+
+      .carrier-name {
+        grid-area: cname;
+      }
+
+      .star-icons {
+        grid-area: rating;
+      }
+
+      .feature-icons {
+        grid-area: features;
+      }
+
+      .carrier-tagline {
+        grid-area: tag;
+      }
+    }
+  }
 }
 
 // //////// Card Components //////// //
 // //////// Verified Mark //////// //
 .verified-mark {
   position: absolute;
-  // background-color: $purple-verified;
   height: 0px;
   width: 0px;
   border-top: 2rem solid transparent;
@@ -129,12 +177,34 @@ $grey-text: #959595;
 .logo-container {
   width: 5.5rem;
   height: 4.5rem;
-  background-color: green;
 }
 
 .logo {
   width: 5.5rem;
   height: 4.5rem;
+}
+
+// repeated reference - first one was layout only
+.star-icons {
+  padding-top: 0.8rem;
+}
+
+.button-blue {
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 1rem 2.5rem;
+  color: $blue-button;
+}
+
+.button-orange {
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 1rem 2.5rem;
+  color: $blue-button;
+}
+
+a {
+  background-color: $blue-button;
 }
 
 .chevron-up {
@@ -143,8 +213,3 @@ $grey-text: #959595;
 
 .chevron-down {
 }
-
-// .verified-mark {
-//   height: 2rem;
-//   width: 2rem;
-// }

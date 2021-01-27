@@ -1,4 +1,5 @@
 const FeaturesListDropdown = (props) => {
+  console.log(props.features);
   if (props.features) {
     return (
       <div>

@@ -24,10 +24,6 @@ export default class Card extends React.Component {
     }));
   };
 
-  componentDidMount() {
-    // console.log(this.props.aCardData);
-  }
-
   render() {
     let carrier = this.props.aCardData;
 
@@ -35,25 +31,30 @@ export default class Card extends React.Component {
       <div className="card" onClick={() => this.handleAccordianClick()}>
         <VerifiedMark isVerified={carrier.tag} />
 
-        <Logo />
+        <div className="card-topfold-container">
+          <div className="card-topfold-subcontainer-1">
+            <Logo />
+          </div>
 
-        <h1>{carrier.name}</h1>
+          <div className="card-topfold-subcontainer-2">
+            <h1 className="carrier-name">{carrier.name}</h1>
+            <Stars stars={carrier.stars} />
+            <Features features={carrier.features} />
+            {carrier.tagline ? (
+              <div className="carrier-tagline">{carrier.tagline}</div>
+            ) : null}
+          </div>
 
-        <Stars stars={carrier.stars} />
-
-        <Features features={carrier.features} />
-
-        {carrier.tagline ? <div>{carrier.tagline}</div> : null}
-
-        <div>{carrier.tag}</div>
-
-        <Price
-          rate={carrier.rate}
-          type={carrier.type}
-          isExpanded={this.state.isExpanded}
-        />
-
-        <Button data={carrier.action} type={carrier.type} />
+          <div className="card-topfold-subcontainer-3">
+            <div>{carrier.tag}</div>
+            <Price
+              rate={carrier.rate}
+              type={carrier.type}
+              isExpanded={this.state.isExpanded}
+            />
+            <Button data={carrier.action} type={carrier.type} />
+          </div>
+        </div>
 
         <div
           className={

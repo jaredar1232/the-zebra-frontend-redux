@@ -62,7 +62,9 @@ const Features = (props) => {
       return featuresComponentArray;
     };
 
-    return <div> {buildFeatures(props.features)}</div>;
+    return (
+      <div className="feature-icons"> {buildFeatures(props.features)}</div>
+    );
   } else {
     return null;
   }

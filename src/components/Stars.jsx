@@ -1,6 +1,6 @@
 import React from "react";
 import { ReactComponent as Gold } from "../assets/IconStarGold.svg";
-import { ReactComponent as White } from "../assets/IconStarWhite.svg";
+import { ReactComponent as Grey } from "../assets/IconStarGrey.svg";
 
 const Stars = (props) => {
   // Only return stars if value exists
@@ -15,14 +15,14 @@ const Stars = (props) => {
           starArray.push(<Gold key={key} />);
           key++;
         } else {
-          starArray.push(<White key={key} />);
+          starArray.push(<Grey key={key} />);
           key++;
         }
       }
       return starArray;
     };
 
-    return <div> {countStars(props.stars)}</div>;
+    return <div className="star-icons"> {countStars(props.stars)}</div>;
   } else {
     return null;
   }

@@ -9,7 +9,12 @@ import { ReactComponent as IconBoltWhite } from "../assets/IconBoltWhite.svg";
 const Button = (props) => {
   if (props.type === 0 || props.type === 1) {
     return (
-      <a href={props.data.link} target="_blank" rel="noopener noreferrer">
+      <a
+        className="button-blue"
+        href={props.data.link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {props.data.link_copy === "Buy Online Now" ? (
           <IconBoltWhite />
         ) : (
@@ -20,7 +25,12 @@ const Button = (props) => {
     );
   } else if (props.type === 3) {
     return (
-      <a href={props.data.link} target="_blank" rel="noopener noreferrer">
+      <a
+        className="button-orange"
+        href={props.data.link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {props.data.link_copy === "Buy Online Now" ? (
           <IconBoltWhite />
         ) : (
