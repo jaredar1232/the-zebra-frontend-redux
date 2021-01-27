@@ -137,6 +137,13 @@ $grey-text: #959595;
   height: 4.5rem;
 }
 
+.chevron-up {
+  transform: rotate(180deg);
+}
+
+.chevron-down {
+}
+
 // .verified-mark {
 //   height: 2rem;
 //   width: 2rem;

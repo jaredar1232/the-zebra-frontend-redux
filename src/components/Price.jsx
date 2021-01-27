@@ -1,5 +1,3 @@
-import react from "react";
-
 const Price = (props) => {
   if (props.type === 2 || (props.isExpanded && props.rate)) {
     return (
