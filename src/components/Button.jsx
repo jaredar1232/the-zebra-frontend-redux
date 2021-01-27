@@ -14,6 +14,7 @@ const Button = (props) => {
         href={props.data.link}
         target="_blank"
         rel="noopener noreferrer"
+        data-testid="button-test-id"
       >
         {props.data.link_copy === "Buy Online Now" ? (
           <IconBoltWhite />
@@ -30,6 +31,7 @@ const Button = (props) => {
         href={props.data.link}
         target="_blank"
         rel="noopener noreferrer"
+        data-testid="button-test-id"
       >
         {props.data.link_copy === "Buy Online Now" ? (
           <IconBoltWhite />

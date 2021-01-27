@@ -96,7 +96,11 @@ export default class App extends React.Component {
         </div>
         <div className="card-container">
           {this.state.carrierCardData.map((aCardData) => (
-            <Card aCardData={aCardData} key={aCardData.name} />
+            <Card
+              aCardData={aCardData}
+              key={aCardData.name}
+              data-testid="card-test-id"
+            />
           ))}
         </div>
       </div>

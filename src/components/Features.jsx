@@ -63,7 +63,9 @@ const Features = (props) => {
     };
 
     return (
-      <div className="feature-icons"> {buildFeatures(props.features)}</div>
+      <div className="feature-icons" data-testid="features-test-id">
+        {buildFeatures(props.features)}
+      </div>
     );
   } else {
     return null;

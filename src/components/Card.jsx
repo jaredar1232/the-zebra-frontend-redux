@@ -37,16 +37,20 @@ export default class Card extends React.Component {
           </div>
 
           <div className="card-topfold-subcontainer-2">
-            <h1 className="carrier-name">{carrier.name}</h1>
+            <h1 className="carrier-name" data-testid="carriername-test-id">
+              {carrier.name}
+            </h1>
             <Stars stars={carrier.stars} />
             <Features features={carrier.features} />
             {carrier.tagline ? (
-              <div className="carrier-tagline">{carrier.tagline}</div>
+              <div className="carrier-tagline" data-testid="tagline-test-id">
+                {carrier.tagline}
+              </div>
             ) : null}
           </div>
 
           <div className="card-topfold-subcontainer-3">
-            <div>{carrier.tag}</div>
+            <div data-testid="tag-test-id">{carrier.tag}</div>
             <Price
               rate={carrier.rate}
               type={carrier.type}
@@ -66,6 +70,7 @@ export default class Card extends React.Component {
         </div>
 
         <Chevron
+          data-testid="chevron-test-id"
           className={this.state.isExpanded ? "chevron-up" : "chevron-down"}
         />
       </div>

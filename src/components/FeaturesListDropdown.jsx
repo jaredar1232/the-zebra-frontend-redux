@@ -1,8 +1,7 @@
 const FeaturesListDropdown = (props) => {
-  console.log(props.features);
   if (props.features) {
     return (
-      <div>
+      <div data-testid="featureslistdropdown-test-id">
         <h2>Features</h2>
         <div />
         <p dangerouslySetInnerHTML={{ __html: props.features }}></p>
