@@ -55,26 +55,30 @@ export default class Card extends React.Component {
         <div
           className={
             this.state.isExpanded
-              ? "card__dropdown--shown"
-              : "card__dropdown--hidden"
+              ? "card__accordion--down"
+              : "card__accordion--up"
           }
         >
           <FeaturesListDropdown features={carrier.features} />
           <DetailsDropdown name={carrier.name} details={carrier.detail_body} />
         </div>
 
-        <button
-          className="card__chevron-button"
-          onClick={(e) => this.handleAccordianClick(e)}
-        >
-          <Chevron
-            className={
-              this.state.isExpanded
-                ? "card__chevron--up"
-                : "card__chevron--down"
-            }
-          />
-        </button>
+        {carrier.features?.length > 0 || carrier?.details ? (
+          <button
+            className="card__chevron-button"
+            onClick={(e) => this.handleAccordianClick(e)}
+          >
+            <Chevron
+              className={
+                this.state.isExpanded
+                  ? "card__chevron--up"
+                  : "card__chevron--down"
+              }
+            />
+          </button>
+        ) : (
+          <div className="card__chevron-placeholder"></div>
+        )}
       </div>
     );
   }

@@ -108,6 +108,7 @@ ul {
   padding: 1.5rem 3rem 0.3rem 3rem;
   margin: 0rem 0.5rem 1rem 0.5rem;
   position: relative;
+  transition: all 0.2s ease-in-out;
 
   .card__topfold-container {
     display: grid;
@@ -174,6 +175,12 @@ ul {
       }
     }
   }
+}
+
+.card:hover {
+  transform: translateY(2px);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 5px 5px 8px 8px #ebebeb4f;
 }
 
 // //////// Card Components //////// //
@@ -259,13 +266,13 @@ ul {
   }
 }
 
-.card__dropdown--shown {
+.card__accordion--down {
   @extend %dropdown-shared;
   height: 160px;
   padding-top: 2rem;
 }
 
-.card__dropdown--hidden {
+.card__accordion--up {
   @extend %dropdown-shared;
   height: 0;
 }
@@ -288,4 +295,8 @@ ul {
 // //////// Chevron //////// //
 .card__chevron--up {
   transform: rotate(180deg);
+}
+
+.card__chevron-placeholder {
+  height: 24px;
 }

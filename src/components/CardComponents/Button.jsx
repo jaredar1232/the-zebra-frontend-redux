@@ -15,7 +15,7 @@ const Button = (props) => {
       >
         <IconArrowDown />
 
-        <div className={"card-button-caption"}>
+        <div className={"card__button-caption"}>
           {props.data.link_text ? props.data.link_text : props.data.link_copy}
         </div>
       </a>

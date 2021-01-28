@@ -14,6 +14,16 @@ Testing:
 
 5. The mock server and app do not need to be running to run the tests, it is however fine if they are. Simply run "npm test" in a terminal and then press "a" to run full test suit.
 
+SideNotes:
+
+Structure:
+App has two components to it > Nav and Deck
+Nav is at the top followed by Deck
+Deck then maps the carrier data to many Cards
+A Card is composed of several smaller components. See CardComponents folder.
+
+CSS naming follows: BEM naming conventions. See http://getbem.com/naming/ for more info.
+
 ## Available Scripts
 
 In the project directory, you can run:
