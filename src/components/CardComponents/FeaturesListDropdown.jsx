@@ -7,7 +7,7 @@ const FeaturesListDropdown = (props) => {
         data-testid="featureslistdropdown-test-id"
       >
         <h2>Features</h2>
-        <div />
+        <div className="dropdown-divider" />
         <p dangerouslySetInnerHTML={{ __html: props.features }}></p>
       </div>
     );

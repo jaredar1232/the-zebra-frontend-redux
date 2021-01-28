@@ -1,5 +1,4 @@
-import React from "react";
-import image from "../assets/logo-carrier-sm-default.png";
+import image from "../../assets/logo-carrier-sm-default.png";
 
 const Logo = () => {
   return (

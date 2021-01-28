@@ -3,25 +3,7 @@ $blue-button: linear-gradient(350deg, #6169f4 40%, #1cbeec 85%);
 $purple-verified: #5c6cff;
 $orange-button: linear-gradient(350deg, #f87000 40%, #f8ae00 85%);
 $grey-text: #959595;
-
-// //////// Animations //////// //
-// @keyframes accordianOpen {
-//   from {
-//     height: 0rem;
-//   }
-//   to {
-//     height: 10rem;
-//   }
-// }
-
-// @keyframes accordianClose {
-//   from {
-//     height: 10rem;
-//   }
-//   to {
-//     height: 0rem;
-//   }
-// }
+$grey-borders: rgb(240, 240, 240);
 
 // //////// App //////// //
 .App {
@@ -52,9 +34,9 @@ p {
   text-align: left;
 }
 
-// a {
-//   background-color: red;
-// }
+ul {
+  margin: 0;
+}
 
 // //////// Nav //////// //
 %nav-shared {
@@ -95,37 +77,7 @@ p {
   }
 }
 
-// //////// Dropdown Section //////// //
-%dropdown-shared {
-  overflow: hidden;
-  animation-duration: 0.5s;
-  transition: all 0.5s ease-in-out;
-}
-
-.dropdown-shown {
-  @extend %dropdown-shared;
-  height: 10rem;
-  display: grid;
-  grid-template-areas: "feet deets";
-  grid-template-columns: 50% 50%;
-  padding-top: 2rem;
-
-  .card-detailsdropdown {
-    grid: deets;
-  }
-
-  .featureslistdropdown {
-    grid: feet;
-  }
-}
-
-.dropdown-hidden {
-  @extend %dropdown-shared;
-  height: 0rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
+// //////// Card //////// //
 .card-container {
   box-sizing: border-box;
   text-align: center;
@@ -135,9 +87,9 @@ p {
 // //////// Card Layout //////// //
 .card {
   box-sizing: border-box;
-  border: 2px solid rgb(240, 240, 240);
+  border: 2px solid $grey-borders;
   border-radius: 5px;
-  padding: 1.5rem 3rem;
+  padding: 1.5rem 3rem 0.3rem 3rem;
   margin: 0rem 0.5rem 1rem 0.5rem;
   position: relative;
 
@@ -174,13 +126,12 @@ p {
     }
 
     .card-topfold-subcontainer-3 {
-      // padding-left: 2rem;
       text-align: right;
       display: grid;
       grid-template-areas:
         "tag price"
         "button button";
-      grid-template-columns: auto auto;
+      grid-template-columns: 55% 45%;
       grid-template-rows: auto auto;
 
       .card-tag {
@@ -204,10 +155,10 @@ p {
   position: absolute;
   height: 0px;
   width: 0px;
-  border-top: 2rem solid transparent;
-  border-left: 2rem solid transparent;
-  border-right: 2rem solid $purple-verified;
-  border-bottom: 2rem solid $purple-verified;
+  border-top: 1.5rem solid transparent;
+  border-left: 1.5rem solid transparent;
+  border-right: 1.5rem solid $purple-verified;
+  border-bottom: 1.5rem solid $purple-verified;
   border-bottom-right-radius: 5px;
   transform: rotate(180deg);
   top: 0;
@@ -236,6 +187,11 @@ p {
   font-size: 1rem;
   font-weight: 600;
   color: $purple-verified;
+  // vertical-align: middle;
+  // position: absolute;
+  // top: 14%;
+  // right: 16%;
+  // transform: translateY(-50%);
 }
 
 // //////// Price //////// //
@@ -274,6 +230,42 @@ p {
   background: $orange-button;
   margin-top: 0.8rem;
   width: 12rem;
+}
+
+// //////// Dropdown Section //////// //
+%dropdown-shared {
+  overflow: hidden;
+  animation-duration: 0.5s;
+  transition: all 0.5s ease-in-out;
+  display: grid;
+  grid-template-areas: "feet deets";
+  grid-template-columns: 50% 50%;
+
+  .card-detailsdropdown {
+    grid: deets;
+  }
+
+  .card-featureslistdropdown {
+    grid: feet;
+  }
+}
+
+.dropdown-shown {
+  @extend %dropdown-shared;
+  height: 10rem;
+  padding-top: 2rem;
+}
+
+.dropdown-hidden {
+  @extend %dropdown-shared;
+  height: 0rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.dropdown-divider {
+  border: 1px solid $grey-borders;
+  margin: 0.8rem 0;
 }
 
 // //////// chevron button //////// //

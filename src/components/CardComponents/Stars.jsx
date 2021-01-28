@@ -1,6 +1,5 @@
-import React from "react";
-import { ReactComponent as Gold } from "../assets/IconStarGold.svg";
-import { ReactComponent as Grey } from "../assets/IconStarGrey.svg";
+import { ReactComponent as Gold } from "../../assets/IconStarGold.svg";
+import { ReactComponent as Grey } from "../../assets/IconStarGrey.svg";
 
 const Stars = (props) => {
   // Only return stars if value exists

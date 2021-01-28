@@ -1,5 +1,3 @@
-import React from "react";
-
 const DetailsDropdown = (props) => {
   // Return an empty div for grid formatting purposes
   if (props.details) {
@@ -9,7 +7,7 @@ const DetailsDropdown = (props) => {
         data-testid="detailsdropdown-test-id"
       >
         <h2>Why {props.name}?</h2>
-        <div />
+        <div className="dropdown-divider" />
         <p>{props.details}</p>
       </div>
     );

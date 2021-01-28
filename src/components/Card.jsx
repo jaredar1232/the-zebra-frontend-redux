@@ -1,12 +1,12 @@
 import React from "react";
-import Stars from "./Stars";
-import Logo from "./Logo";
-import Features from "./Features";
-import Button from "./Button";
-import VerifiedMark from "./VerifiedMark";
-import FeaturesListDropdown from "./FeaturesListDropdown";
-import DetailsDropdown from "./DetailsDropdown";
-import Price from "./Price";
+import Stars from "./CardComponents/Stars";
+import Logo from "./CardComponents/Logo";
+import Features from "./CardComponents/Features";
+import Button from "./CardComponents/Button";
+import VerifiedMark from "./CardComponents/VerifiedMark";
+import FeaturesListDropdown from "./CardComponents/FeaturesListDropdown";
+import DetailsDropdown from "./CardComponents/DetailsDropdown";
+import Price from "./CardComponents/Price";
 import { ReactComponent as Chevron } from "../assets/IconChevronDown.svg";
 
 export default class Card extends React.Component {

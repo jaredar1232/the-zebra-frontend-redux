@@ -1,6 +1,5 @@
-import React from "react";
-import { ReactComponent as IconArrowDown } from "../assets/IconArrowDown.svg";
-import { ReactComponent as IconBoltWhite } from "../assets/IconBoltWhite.svg";
+import { ReactComponent as IconArrowDown } from "../../assets/IconArrowDown.svg";
+import { ReactComponent as IconBoltWhite } from "../../assets/IconBoltWhite.svg";
 
 /**
  * Type determines color
