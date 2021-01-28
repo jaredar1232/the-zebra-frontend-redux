@@ -18,7 +18,7 @@ export default class App extends React.Component {
   // Get all data via mock query and store in state
   getData = () => {
     axios
-      .get("http://localhost:3001/cararier")
+      .get("http://localhost:3001/carrier")
       .then((response) => {
         this.setState({
           carrierCardData: response.data.carrier_cards,

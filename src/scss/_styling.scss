@@ -114,6 +114,7 @@ ul {
 
       .star-icons {
         grid-area: rating;
+        padding-top: 0.8rem;
       }
 
       .feature-icons {
@@ -136,10 +137,20 @@ ul {
 
       .card-tag {
         grid-area: tag;
+        font-size: 1rem;
+        font-weight: 600;
+        color: $purple-verified;
       }
 
       .card-price {
         grid-area: price;
+        font-size: 2rem;
+
+        .card-price-month {
+          font-size: 1rem;
+          color: $grey-text;
+          vertical-align: middle;
+        }
       }
 
       .button {
@@ -149,7 +160,7 @@ ul {
   }
 }
 
-// //////// Card Components (elements in lowercase) //////// //
+// //////// Card Components //////// //
 // //////// Verified Mark //////// //
 .verified-mark {
   position: absolute;
@@ -173,35 +184,6 @@ ul {
   .logo {
     width: 5.5rem;
     height: 4.5rem;
-  }
-}
-
-// repeated reference - first one was layout only
-// //////// Stars //////// //
-.star-icons {
-  padding-top: 0.8rem;
-}
-
-// //////// card tag //////// //
-.card-tag {
-  font-size: 1rem;
-  font-weight: 600;
-  color: $purple-verified;
-  // vertical-align: middle;
-  // position: absolute;
-  // top: 14%;
-  // right: 16%;
-  // transform: translateY(-50%);
-}
-
-// //////// Price //////// //
-.card-price {
-  font-size: 2rem;
-
-  .card-price-month {
-    font-size: 1rem;
-    color: $grey-text;
-    vertical-align: middle;
   }
 }
 
@@ -268,7 +250,7 @@ ul {
   margin: 0.8rem 0;
 }
 
-// //////// chevron button //////// //
+// //////// Chevron button //////// //
 .chevron-button {
   width: 10rem;
   height: 1.5rem;
