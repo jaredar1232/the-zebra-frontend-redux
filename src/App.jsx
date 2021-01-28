@@ -11,7 +11,7 @@ export default class App extends React.Component {
       carrierCardData: [],
       carriersSearched: 0,
       searchTime: 0,
-      formValue: "best",
+      formValue: "highest",
       loading: true,
     };
   }

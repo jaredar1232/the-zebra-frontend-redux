@@ -59,11 +59,7 @@ export default class Card extends React.Component {
             <div className="card-tag" data-testid="tag-test-id">
               {carrier.tag}
             </div>
-            <Price
-              rate={carrier.rate}
-              type={carrier.type}
-              isExpanded={this.state.isExpanded}
-            />
+            <Price rate={carrier.rate} type={carrier.type} />
             <Button data={carrier.action} type={carrier.type} />
           </div>
         </div>

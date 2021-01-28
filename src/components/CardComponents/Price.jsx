@@ -1,5 +1,5 @@
 const Price = (props) => {
-  if (props.type === 2 || (props.isExpanded && props.rate)) {
+  if (props.type === 2 || props.type === 3) {
     return (
       <div className="card-price" data-testid="price-test-id">
         ${Math.ceil(props.rate)} <span className="card-price-month">/ mo</span>
