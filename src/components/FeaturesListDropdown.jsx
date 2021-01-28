@@ -1,14 +1,18 @@
 const FeaturesListDropdown = (props) => {
+  // Return an empty div for grid formatting purposes
   if (props.features) {
     return (
-      <div data-testid="featureslistdropdown-test-id">
+      <div
+        className="card-featureslistdropdown"
+        data-testid="featureslistdropdown-test-id"
+      >
         <h2>Features</h2>
         <div />
         <p dangerouslySetInnerHTML={{ __html: props.features }}></p>
       </div>
     );
   } else {
-    return null;
+    return <div className="card-featureslistdropdown"></div>;
   }
 };
 

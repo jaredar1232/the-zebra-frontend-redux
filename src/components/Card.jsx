@@ -17,8 +17,14 @@ export default class Card extends React.Component {
     };
   }
 
-  // Toggles state: this determines which accordian CSS is being used
+  // Toggles isExpanded state
   handleAccordianClick = () => {
+    /**
+     * I originally wanted to toggle the accordian with clicks to certain
+     * parts of the parent but that will take more set up to filter each
+     * element clicked
+     */
+
     this.setState((prevState) => ({
       isExpanded: !prevState.isExpanded,
     }));
@@ -28,7 +34,7 @@ export default class Card extends React.Component {
     let carrier = this.props.aCardData;
 
     return (
-      <div className="card" onClick={() => this.handleAccordianClick()}>
+      <div className="card">
         <VerifiedMark isVerified={carrier.tag} />
 
         <div className="card-topfold-container">
@@ -50,7 +56,9 @@ export default class Card extends React.Component {
           </div>
 
           <div className="card-topfold-subcontainer-3">
-            <div data-testid="tag-test-id">{carrier.tag}</div>
+            <div className="card-tag" data-testid="tag-test-id">
+              {carrier.tag}
+            </div>
             <Price
               rate={carrier.rate}
               type={carrier.type}
@@ -69,10 +77,15 @@ export default class Card extends React.Component {
           <DetailsDropdown name={carrier.name} details={carrier.detail_body} />
         </div>
 
-        <Chevron
-          data-testid="chevron-test-id"
-          className={this.state.isExpanded ? "chevron-up" : "chevron-down"}
-        />
+        <button
+          className="chevron-button"
+          onClick={(e) => this.handleAccordianClick(e)}
+        >
+          <Chevron
+            data-testid="chevron-test-id"
+            className={this.state.isExpanded ? "chevron-up" : "chevron-down"}
+          />
+        </button>
       </div>
     );
   }

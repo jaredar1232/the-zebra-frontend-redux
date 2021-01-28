@@ -10,7 +10,7 @@ const Button = (props) => {
   if (props.type === 0 || props.type === 1) {
     return (
       <a
-        className="button-blue"
+        className="button button-blue"
         href={props.data.link}
         target="_blank"
         rel="noopener noreferrer"
@@ -27,7 +27,7 @@ const Button = (props) => {
   } else if (props.type === 3) {
     return (
       <a
-        className="button-orange"
+        className="button button-orange"
         href={props.data.link}
         target="_blank"
         rel="noopener noreferrer"
