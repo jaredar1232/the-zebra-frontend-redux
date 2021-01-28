@@ -19,12 +19,6 @@ export default class Card extends React.Component {
 
   // Toggles isExpanded state
   handleAccordianClick = () => {
-    /**
-     * I originally wanted to toggle the accordian with clicks to certain
-     * parts of the parent but that will take more set up to filter each
-     * element clicked
-     */
-
     this.setState((prevState) => ({
       isExpanded: !prevState.isExpanded,
     }));
@@ -37,28 +31,22 @@ export default class Card extends React.Component {
       <div className="card">
         <VerifiedMark isVerified={carrier.tag} />
 
-        <div className="card-topfold-container">
-          <div className="card-topfold-subcontainer-1">
+        <div className="card__topfold-container">
+          <div className="card__topfold-subcontainer--1">
             <Logo />
           </div>
 
-          <div className="card-topfold-subcontainer-2">
-            <h1 className="carrier-name" data-testid="carriername-test-id">
-              {carrier.name}
-            </h1>
+          <div className="card__topfold-subcontainer--2">
+            <h1 className="card__carrier-name">{carrier.name}</h1>
             <Stars stars={carrier.stars} />
             <Features features={carrier.features} />
             {carrier.tagline ? (
-              <div className="carrier-tagline" data-testid="tagline-test-id">
-                {carrier.tagline}
-              </div>
+              <div className="card__carrier-tagline">{carrier.tagline}</div>
             ) : null}
           </div>
 
-          <div className="card-topfold-subcontainer-3">
-            <div className="card-tag" data-testid="tag-test-id">
-              {carrier.tag}
-            </div>
+          <div className="card__topfold-subcontainer--3">
+            <div className="card__verified-tag">{carrier.tag}</div>
             <Price rate={carrier.rate} type={carrier.type} />
             <Button data={carrier.action} type={carrier.type} />
           </div>
@@ -66,20 +54,25 @@ export default class Card extends React.Component {
 
         <div
           className={
-            this.state.isExpanded ? "dropdown-shown" : "dropdown-hidden"
+            this.state.isExpanded
+              ? "card__dropdown--shown"
+              : "card__dropdown--hidden"
           }
         >
-          <FeaturesListDropdown features={carrier.features_html} />
+          <FeaturesListDropdown features={carrier.features} />
           <DetailsDropdown name={carrier.name} details={carrier.detail_body} />
         </div>
 
         <button
-          className="chevron-button"
+          className="card__chevron-button"
           onClick={(e) => this.handleAccordianClick(e)}
         >
           <Chevron
-            data-testid="chevron-test-id"
-            className={this.state.isExpanded ? "chevron-up" : "chevron-down"}
+            className={
+              this.state.isExpanded
+                ? "card__chevron--up"
+                : "card__chevron--down"
+            }
           />
         </button>
       </div>

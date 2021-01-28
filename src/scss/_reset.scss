@@ -87,12 +87,3 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-
-// Set root sizing for rem
-html {
-  font-size: 16px;
-}
-
-::-webkit-scrollbar {
-  width: 0rem;
-}

@@ -5,28 +5,33 @@ $orange-button: linear-gradient(350deg, #f87000 40%, #f8ae00 85%);
 $grey-text: #959595;
 $grey-borders: rgb(240, 240, 240);
 
+// //////// Set Defaults //////// //
+html {
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 // //////// App //////// //
 .App {
-  border: 1px solid black;
-  border-radius: 1rem;
-  margin: 10rem auto 0 auto;
-  width: 65vw;
-  height: 65vh;
-  overflow-y: scroll;
+  margin: 2rem auto 0 auto;
+  width: 65%;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-
   min-width: 950px;
   max-width: 1300px;
-}
 
-.app-loading-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-.app-loading {
-  font-size: 5rem;
+  .app-loading-wrapper {
+    text-align: center;
+  }
+  .app-loading {
+    font-size: 5rem;
+  }
 }
 
 // //////// Generic Elements //////// //
@@ -61,10 +66,10 @@ ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  .query-info {
+  .nav__query-info {
     position: relative;
 
-    .query-info-content {
+    .nav__query-info-content {
       @extend %nav-shared;
       position: absolute;
       bottom: 0;
@@ -73,44 +78,42 @@ ul {
     }
   }
 
-  .query-info-bold {
+  .nav__query-info-contentquery-info-bold {
     font-weight: 600;
   }
 
-  .form {
+  .nav__form {
     @extend %nav-shared;
     text-align: right;
 
-    .form-selector {
+    .nav__form-selector {
       padding: 0.8rem;
-      border-radius: 0.5rem;
+      border-radius: 8px;
       margin-left: 0.5rem;
       font-size: 1.2rem;
     }
   }
 }
 
-// //////// Card //////// //
-.card-container {
-  box-sizing: border-box;
+// //////// Deck //////// //
+.deck__card-container {
   text-align: center;
   width: 100%;
 }
 
-// //////// Card Layout //////// //
+// //////// Card //////// //
 .card {
-  box-sizing: border-box;
   border: 2px solid $grey-borders;
   border-radius: 5px;
   padding: 1.5rem 3rem 0.3rem 3rem;
   margin: 0rem 0.5rem 1rem 0.5rem;
   position: relative;
 
-  .card-topfold-container {
+  .card__topfold-container {
     display: grid;
     grid-template-columns: 10% 60% 30%;
 
-    .card-topfold-subcontainer-2 {
+    .card__topfold-subcontainer--2 {
       padding-left: 2rem;
       text-align: left;
       display: grid;
@@ -121,25 +124,25 @@ ul {
       grid-template-columns: 20% auto;
       grid-template-rows: auto auto auto;
 
-      .carrier-name {
+      .card__carrier-name {
         grid-area: cname;
       }
 
-      .star-icons {
+      .card__star-icons {
         grid-area: rating;
         padding-top: 0.8rem;
       }
 
-      .feature-icons {
+      .card__feature-icons {
         grid-area: features;
       }
 
-      .carrier-tagline {
+      .card__carrier-tagline {
         grid-area: tagline;
       }
     }
 
-    .card-topfold-subcontainer-3 {
+    .card__topfold-subcontainer--3 {
       text-align: right;
       display: grid;
       grid-template-areas:
@@ -148,25 +151,25 @@ ul {
       grid-template-columns: 55% 45%;
       grid-template-rows: auto auto;
 
-      .card-tag {
+      .card__verified-tag {
         grid-area: tag;
         font-size: 1rem;
         font-weight: 600;
         color: $purple-verified;
       }
 
-      .card-price {
+      .card__price {
         grid-area: price;
         font-size: 2rem;
 
-        .card-price-month {
+        .card__price-month {
           font-size: 1rem;
           color: $grey-text;
           vertical-align: middle;
         }
       }
 
-      .button {
+      .card__button {
         grid-area: button;
       }
     }
@@ -175,7 +178,7 @@ ul {
 
 // //////// Card Components //////// //
 // //////// Verified Mark //////// //
-.verified-mark {
+.card__verified-mark {
   position: absolute;
   height: 0px;
   width: 0px;
@@ -190,13 +193,13 @@ ul {
 }
 
 // //////// Logo //////// //
-.logo-container {
-  width: 5.5rem;
-  height: 4.5rem;
+.card__logo-container {
+  width: 88px;
+  height: 72px;
 
-  .logo {
-    width: 5.5rem;
-    height: 4.5rem;
+  .card__logo {
+    width: 88px;
+    height: 72px;
   }
 }
 
@@ -204,7 +207,7 @@ ul {
 %button-shared {
   border-radius: 30px;
   padding: 0.6rem 0rem;
-  height: 1.5rem;
+  height: 2.5rem;
   text-align: center;
   font-size: 1.3rem;
   color: white;
@@ -212,19 +215,24 @@ ul {
   position: absolute;
   right: 2rem;
   top: 3rem;
+
+  .card__button-caption {
+    display: inline-block;
+    padding-left: 0.5rem;
+  }
 }
 
-.button-blue {
+.card__button--blue {
   @extend %button-shared;
   background: $blue-button;
-  width: 10rem;
+  width: 160px;
 }
 
-.button-orange {
+.card__button--orange {
   @extend %button-shared;
   background: $orange-button;
   margin-top: 0.8rem;
-  width: 12rem;
+  width: 192px;
 }
 
 // //////// Dropdown Section //////// //
@@ -236,41 +244,48 @@ ul {
   grid-template-areas: "feet deets";
   grid-template-columns: 50% 50%;
 
-  .card-detailsdropdown {
+  .card__detailsdropdown {
     grid: deets;
   }
 
-  .card-featureslistdropdown {
+  .card__featureslistdropdown {
     grid: feet;
+
+    .card__featureslistdropdown-unorderedlist {
+      columns: 2;
+      text-align: left;
+      color: $grey-text;
+    }
   }
 }
 
-.dropdown-shown {
+.card__dropdown--shown {
   @extend %dropdown-shared;
-  height: 10rem;
+  height: 160px;
   padding-top: 2rem;
 }
 
-.dropdown-hidden {
+.card__dropdown--hidden {
   @extend %dropdown-shared;
-  height: 0rem;
+  height: 0;
 }
 
-.dropdown-divider {
+.card__dropdown-divider {
   border: 1px solid $grey-borders;
   margin: 0.8rem 0;
+  width: 95%;
 }
 
 // //////// Chevron button //////// //
-.chevron-button {
-  width: 10rem;
-  height: 1.5rem;
+.card__chevron-button {
+  width: 160px;
+  height: 24px;
   border: none;
   background-color: white;
   cursor: pointer;
 }
 
 // //////// Chevron //////// //
-.chevron-up {
+.card__chevron--up {
   transform: rotate(180deg);
 }

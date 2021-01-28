@@ -1,7 +1,7 @@
 import Card from "./Card";
 
 const Deck = (props) => {
-  // Takes in sort formValue. Updates carrierCardData in state
+  // Takes in sort formValue and unstorted data. Updates carrierCardData in state
   const sortData = (formValue, unsortedData) => {
     let sortedCarrierCardData;
 
@@ -41,7 +41,7 @@ const Deck = (props) => {
       case "alphabeticalZ":
         sortedCarrierCardData = unsortedData.sort((a, b) => {
           // Fixed typos in provided "card_order_a_to_z" data
-          return b.card_order_a_to_z - a.card_order_a_to_z;
+          return a.card_order_z_to_a - b.card_order_z_to_a;
         });
         break;
       default:
@@ -54,13 +54,9 @@ const Deck = (props) => {
   };
 
   return (
-    <div className="card-container">
+    <div className="deck__card-container">
       {sortData(props.formValue, props.carrierCardData).map((aCardData) => (
-        <Card
-          aCardData={aCardData}
-          key={aCardData.name}
-          data-testid="card-test-id"
-        />
+        <Card aCardData={aCardData} key={aCardData.name} />
       ))}
     </div>
   );

@@ -14,19 +14,20 @@ const Nav = (props) => {
 
   return (
     <div className="nav-container">
-      <div className="query-info">
-        <div className="query-info-content">
+      <div className="nav__query-info">
+        <div className="nav__query-info-content">
           You just compared
-          <b className="query-info-bold">{` ${props.carriersSearched} rates`}</b>
+          <b className="nav__query-info-content--query-info-bold">{` ${props.carriersSearched} rates`}</b>
           {` in ${toMinutes(props.searchTime)}!`}
         </div>
       </div>
 
-      <form className="form">
+      <form className="nav__form" id="sortform">
         <label>
           Sort by:
           <select
-            className="form-selector"
+            className="nav__form-selector"
+            form="sortform"
             value={props.formValue}
             onChange={(e) => props.handleFormChange(e)}
           >

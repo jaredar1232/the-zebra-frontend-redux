@@ -21,11 +21,7 @@ const Stars = (props) => {
       return starArray;
     };
 
-    return (
-      <div className="star-icons" data-testid="stars-test-id">
-        {countStars(props.stars)}
-      </div>
-    );
+    return <div className="card__star-icons">{countStars(props.stars)}</div>;
   } else {
     return null;
   }
