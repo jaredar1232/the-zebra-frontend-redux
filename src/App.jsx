@@ -12,6 +12,7 @@ export default class App extends React.Component {
       carriersSearched: 0,
       searchTime: 0,
       formValue: "best",
+      loading: true,
     };
   }
 
@@ -24,6 +25,7 @@ export default class App extends React.Component {
           carrierCardData: response.data.carrier_cards,
           carriersSearched: response.data.carriers_searched,
           searchTime: response.data.search_time,
+          loading: false,
         });
       })
       .catch((err) => {
@@ -42,22 +44,26 @@ export default class App extends React.Component {
   }
 
   render() {
-    if (this.state.carrierCardData === []) {
-      return <div>Loading...</div>;
-    } else {
-      return (
-        <div className="App">
-          <Nav
-            carriersSearched={this.state.carriersSearched}
-            searchTime={this.state.searchTime}
-            handleFormChange={this.handleFormChange}
-          />
-          <Deck
-            carrierCardData={this.state.carrierCardData}
-            formValue={this.state.formValue}
-          />
-        </div>
-      );
-    }
+    return (
+      <div className="App">
+        {this.state.loading ? (
+          <div className="app-loading-wrapper">
+            <div className="app-loading">Loading...</div>
+          </div>
+        ) : (
+          <>
+            <Nav
+              carriersSearched={this.state.carriersSearched}
+              searchTime={this.state.searchTime}
+              handleFormChange={this.handleFormChange}
+            />
+            <Deck
+              carrierCardData={this.state.carrierCardData}
+              formValue={this.state.formValue}
+            />
+          </>
+        )}
+      </div>
+    );
   }
 }

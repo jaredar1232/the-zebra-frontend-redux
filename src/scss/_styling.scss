@@ -10,10 +10,22 @@ $grey-borders: rgb(240, 240, 240);
   border: 1px solid black;
   border-radius: 1rem;
   margin: 10rem auto 0 auto;
-  width: 65rem;
-  height: 65rem;
+  width: 65vw;
+  height: 65vh;
   overflow-y: scroll;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+
+  min-width: 825px;
+}
+
+.app-loading-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.app-loading {
+  font-size: 5rem;
 }
 
 // //////// Generic Elements //////// //
@@ -241,8 +253,6 @@ ul {
 .dropdown-hidden {
   @extend %dropdown-shared;
   height: 0rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 .dropdown-divider {
