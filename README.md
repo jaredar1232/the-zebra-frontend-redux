@@ -16,10 +16,15 @@ Testing:
 
 ## Structure:
 App has two components to it > Nav and Deck.
+
 Nav is at the top of the DOM followed by Deck.
+
 Deck then maps the carrier data to many Cards.
+
 A Card is composed of several smaller components. See CardComponents folder.
+
 Utility functions are abstracted out into a utilities folder.
+
 Main SCSS file is used to compose the styling and reset files.
 
 *CSS naming follows: BEM naming conventions. See http://getbem.com/naming/ for more info.
