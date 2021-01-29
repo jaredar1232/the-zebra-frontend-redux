@@ -20,9 +20,8 @@ import { ReactComponent as IconFeaturesCreditCard } from "../../assets/IconFeatu
 import { ReactComponent as IconFeatures247Support } from "../../assets/IconFeatures247Support.svg";
 
 const Features = (props) => {
-  // Only returns if values exist
   if (props.features) {
-    // Takes in a features array. Returns an array of feature components
+    // Takes in an array of feature and icon names. Returns an array of feature components
     const buildFeatures = (featureNamesArray) => {
       let featuresComponentArray = [];
 
@@ -55,7 +54,7 @@ const Features = (props) => {
           IconFeaturesCreditCard: <IconFeaturesCreditCard key={i} />,
           IconFeatures247Support: <IconFeatures247Support key={i} />,
         };
-        let iconName = featureNamesArray[i].icon;
+        const iconName = featureNamesArray[i].icon;
         featuresComponentArray.push(featuresObject[iconName]);
       }
       return featuresComponentArray;

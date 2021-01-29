@@ -1,23 +1,15 @@
-const Nav = (props) => {
-  // Takes in milliseconds. Returns time and proper english as a string
-  const toMinutes = (milliseconds) => {
-    let minutes = Math.ceil(milliseconds / 60000);
-    if (minutes >= 2) {
-      return `${minutes} minutes`;
-    } else if (minutes === 1) {
-      return `${minutes} minute`;
-    } else if (minutes < 1) {
-      // Handles "impossible" case of an instant return (see Math.ceil above, Math.floor doesn't match mockup)
-      return `less than 1 minute`;
-    }
-  };
+import toMinutes from "../helpers/toMinutes";
 
+// Helpers:
+// toMinutes takes in milliseconds as a number. Returns time and as a string
+
+const Nav = (props) => {
   return (
     <div className="nav-container">
       <div className="nav__query-info">
         <div className="nav__query-info-content">
           You just compared
-          <b className="nav__query-info-content--query-info-bold">{` ${props.carriersSearched} rates`}</b>
+          <b className="nav__query-info-content--bold">{` ${props.carriersSearched} rates`}</b>
           {` in ${toMinutes(props.searchTime)}!`}
         </div>
       </div>

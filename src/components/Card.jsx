@@ -17,7 +17,6 @@ export default class Card extends React.Component {
     };
   }
 
-  // Toggles isExpanded state
   handleAccordianClick = () => {
     this.setState((prevState) => ({
       isExpanded: !prevState.isExpanded,
@@ -25,10 +24,10 @@ export default class Card extends React.Component {
   };
 
   render() {
-    let carrier = this.props.aCardData;
+    const carrier = this.props.aCardData;
 
     return (
-      <div className="card">
+      <div className="card" data-testid="card-test-id">
         <VerifiedMark isVerified={carrier.tag} />
 
         <div className="card__topfold-container">

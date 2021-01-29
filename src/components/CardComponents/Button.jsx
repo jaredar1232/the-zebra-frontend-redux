@@ -2,7 +2,7 @@ import { ReactComponent as IconArrowDown } from "../../assets/IconArrowDown.svg"
 import { ReactComponent as IconBoltWhite } from "../../assets/IconBoltWhite.svg";
 
 /**
- * Type determines color and icon
+ * Type determines color, icon, and text
  */
 const Button = (props) => {
   if (props.type === 0 || props.type === 1) {
@@ -15,9 +15,7 @@ const Button = (props) => {
       >
         <IconArrowDown />
 
-        <div className={"card__button-caption"}>
-          {props.data.link_text ? props.data.link_text : props.data.link_copy}
-        </div>
+        <div className={"card__button-caption"}>{props.data.link_text}</div>
       </a>
     );
   } else if (props.type === 3) {
@@ -30,7 +28,7 @@ const Button = (props) => {
       >
         <IconBoltWhite />
         <div className={"card__button-caption"}>
-          {props.data.link_text ? props.data.link_text : props.data.link_copy}
+          {props.data.link_copy ? "Buy Now" : null}
         </div>
       </a>
     );

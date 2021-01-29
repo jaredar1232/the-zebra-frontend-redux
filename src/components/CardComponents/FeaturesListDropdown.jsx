@@ -7,7 +7,8 @@
 
 const FeaturesListDropdown = (props) => {
   // Return an empty div for grid formatting purposes
-  let featuresExist = props.features !== undefined && props.features.length > 0;
+  const featuresExist =
+    props.features !== undefined && props.features.length > 0;
   if (featuresExist) {
     return (
       <div className="card__featureslistdropdown">

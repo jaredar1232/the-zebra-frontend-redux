@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./scss/main.scss";
-import Deck from "./components/Deck";
+import { Deck } from "./components/Deck";
 import Nav from "./components/Nav";
 
 export default class App extends React.Component {
@@ -16,7 +16,7 @@ export default class App extends React.Component {
     };
   }
 
-  // Get all data via mock query and store in state
+  // Getting all data from mock backend
   getData = () => {
     axios
       .get("http://localhost:3001/carrier")
@@ -33,13 +33,11 @@ export default class App extends React.Component {
       });
   };
 
-  // Takes in form event and updates state to reflect form value
   handleFormChange = (event) => {
     this.setState({ formValue: event.target.value });
   };
 
   componentDidMount() {
-    // Call query method once Application mounts
     this.getData();
   }
 
