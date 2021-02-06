@@ -1,5 +1,6 @@
-import Card from "./Card";
-import sortData from "../helpers/sortData";
+import Card from './Card';
+import sortData from '../helpers/sortData';
+import { connect } from 'react-redux';
 
 // Helpers:
 // sortData takes in string keyword and unstorted data array. Returns sorted data array
@@ -7,7 +8,7 @@ import sortData from "../helpers/sortData";
 // Container for mapping and holding all carrier cards
 const Deck = (props) => {
   return (
-    <div className="deck__card-container">
+    <div className='deck__card-container'>
       {sortData(props.formValue, props.carrierCardData).map((aCardData) => (
         <Card aCardData={aCardData} key={aCardData.name} />
       ))}
@@ -15,4 +16,8 @@ const Deck = (props) => {
   );
 };
 
-export { Deck, sortData };
+export default connect((state, props) => {
+  return {
+    formValue: state.formValue,
+  };
+})(Deck);
